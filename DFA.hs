@@ -22,7 +22,7 @@ data DFA s c = MkDFA
 initDFA :: s -> DFA s a
 initDFA q0 = MkDFA q0 Map.empty Set.empty
 
--- | Adds a new transition form state "q" to "q'" with a symbol "c" to a DFA
+-- | Adds a new transition from state "q" to "q'" with a symbol "c" to a DFA
 trans :: (Ord s, Ord c) => (s, s, c) -> DFA s c -> DFA s c
 trans (q, q', c) (MkDFA q0 ts f) = MkDFA q0 ts' f
   where ts' = Map.insertWith Map.union q (Map.singleton c q') ts

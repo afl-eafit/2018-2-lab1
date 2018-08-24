@@ -23,8 +23,8 @@ data Regex a =
 
 -- | Creates a String that is the infix representation of a Regex
 show' :: (Show c) => Regex c -> String
-show' Empty = "0"
-show' Epsilon = "1"
+show' Empty = "∅"
+show' Epsilon = "ε"
 show' (Symbol a) = show a
 show' (Star (Symbol a)) = show' (Symbol a) ++ "*"
 show' (Star a) = "(" ++ show' a ++ ")*"

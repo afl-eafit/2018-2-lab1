@@ -14,6 +14,12 @@
 
     <h3>TA: Andrés Ortega</h3>
 
+    <h3>News</h3>
+
+    <p>(2018-08-24) The code for the Regex module was changed so that
+    now regular expressions are printed in infix notation. The example
+    was updated to reflect this change</p>
+	  
     <h3>Introduction</h3>
 
     <p>While regular expressions and finite automata describe
@@ -75,9 +81,7 @@
 
     <pre>
       GHCi> dfa2Regex example
-      Plus (Plus (Symbol "c") (Dot (Plus (Symbol "b") (Symbol "a")) (Symbol "b")))
-           (Dot (Plus (Symbol "c") (Dot (Plus (Symbol "b") (Symbol "a")) (Symbol "b")))
-                (Star (Dot (Symbol "a") (Symbol "b"))))
+      (c+(b+a)b)(ab)*
     </pre>
 
     <h3>Clean code (10%)</h3>

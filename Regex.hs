@@ -1,4 +1,3 @@
-
 {- | This module serves as an easy way to represent regular expressions. -}
 module Regex where
 
@@ -42,7 +41,7 @@ show' (Dot a (Symbol b)) = "(" ++ show' a ++ ")" ++ show' (Symbol b)
 show' (Dot (Star a) b) = show' (Star a) ++ "(" ++ show' b ++ ")"
 show' (Dot a (Star b)) = "(" ++ show' a ++ ")" ++ show' (Star b)
 show' (Dot (Dot a b) c) = show' (Dot a (Dot b c))
-show' (Dot a b) = "(" ++ (show' a) ++ ")(" ++ (show' b) ++ ")"
+show' (Dot a b) = "(" ++ show' a ++ ")(" ++ show' b ++ ")"
 
 -- | Erases all instances of a Char in a String
 erase :: Char -> String -> String

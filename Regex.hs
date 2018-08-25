@@ -1,23 +1,23 @@
 {- | This module serves as an easy way to represent regular expressions. -}
 module Regex where
 
--- | Represents a regular expession with symbols of type "a"
+-- | Represents a regular expession with symbols of type @a@
 data Regex a =
   -- | The empty language
   Empty
   -- | The empty string
   | Epsilon
-  {- | Represents a symbol of type "a" in the expression.
-       E.g. Symbol "a" = a -}
+  {- | Represents a symbol of type @a@ in the expression.
+       E.g. Symbol @a@ = a -}
   | Symbol a
   {- | Kleene closure of a regular expression.
-       E.g. Star (Symbol "a") = a* -}
+       E.g. Star (Symbol @a@) = a* -}
   | Star (Regex a)
   {- | Union of two regular expressions.
-       E.g. Plus (Symbol "a") (Symbol "b") = a+b -}
+       E.g. Plus (Symbol @a@) (Symbol @b@) = a+b -}
   | Plus (Regex a) (Regex a)
   {- | Concatenation of two regular expressions.
-       E.g. Dot (Symbol "a") (Symbol "b") = ab -}
+       E.g. Dot (Symbol @a@) (Symbol @b@) = ab -}
   | Dot  (Regex a) (Regex a)
 
 -- | Creates a String that is the infix representation of a Regex
@@ -50,6 +50,6 @@ erase c (h:t)
   | c == h = erase c t
   | otherwise = h : erase c t
 
--- | String with the infix representation of a Regex (no \")
+-- | String with the infix representation of a Regex without quotation marks
 instance (Show c) => Show (Regex c) where
   show a = erase '\"' (show' a)

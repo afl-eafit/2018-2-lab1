@@ -16,6 +16,9 @@
 
     <h3>News</h3>
 
+    <p>(2018-08-30) Multiple examples were added for further 
+    clarification.</p>
+	  
     <p>(2018-08-24) The code for the <code>Regex</code> module was
     changed so that now regular expressions are printed in infix
     notation. The example was updated to reflect this change.</p>
@@ -80,8 +83,20 @@
       above GitHub repository, this is what a sample input-output looks like:</p>
 
     <pre>
-      GHCi> dfa2Regex example
+      GHCi> dfa2Regex example0
+      &empty;
+      
+      GHCi> dfa2Regex example1
+      &epsilon;
+      
+      GHCi> dfa2Regex example2
       (c+(b+a)b)(ab)*
+      
+      GHCi> dfa2Regex example3
+      &epsilon;+1(01)*0+1(01)*
+      
+      GHCi> dfa2Regex example4
+      (^o^)/*(-_-)
     </pre>
 
     <h3>Clean code (10%)</h3>

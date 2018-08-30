@@ -52,4 +52,4 @@ erase c (h:t)
 
 -- | String with the infix representation of a Regex without quotation marks
 instance (Show c) => Show (Regex c) where
-  show a = erase '\"' (show' a)
+  show a = erase '\'' $ erase '\"' (show' a)
